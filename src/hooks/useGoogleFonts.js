@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = 'AIzaSyCYlJykR4dsQLqlV9Bx4T2mkPBhYBz04dU'
 const useGoogleFonts = (sort = "date") => {
   const [fonts, setFonts] = useState([])
   const [loading, setLoading] = useState(true)
