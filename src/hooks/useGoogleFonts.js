@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-const API_KEY = 'AIzaSyCYlJykR4dsQLqlV9Bx4T2mkPBhYBz04dU'
+
 const useGoogleFonts = (sort = "date") => {
   const [fonts, setFonts] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    fetch(
-      `https://www.googleapis.com/webfonts/v1/webfonts?sort=${sort}&key=${API_KEY}`
-    )
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const url = `https://www.googleapis.com/webfonts/v1/webfonts?sort=${sort}&key=${API_KEY}`;
+    fetch(url)
       .then((response) => {
         if (response.ok) {
           return response.json()
